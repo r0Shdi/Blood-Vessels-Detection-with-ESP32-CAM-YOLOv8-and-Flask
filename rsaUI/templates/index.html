@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+   
+
+
+
+
+
+
+
+
+</head>
+<body onload="update_values();">
+
+<header>
+    <ul>
+        <a href="{{ url_for("index") }}"><img src="../static/images/logo.png" class="logopng"></a> 
+        <a href="#main" class="title"> RSA</a>
+    </ul>
+
+    <nav class="navigation">
+        <a href="#rsaStream">rsaStream</a>
+        <a href="#team">Team</a>  
+    </nav>
+
+</header>
+
+<section id = "content" class="container">
+    <video autoplay loop muted plays-inline class="background-clip">
+        <source src="../static/images/rsa.mp4"> type="video/mp4">
+    </video>
+    <div class="content">
+        <h1>Remote Surgical Arm</h1>
+       
+    </div>
+</section>
+
+ 
+    
+<section id="rsaStream" class="stream" >
+    <div class="form">
+        <form action="/startstream" method="post">
+            <input type="text" name="StreamAdress" placeholder="Stream Adress" required="required" />
+            <button type="submit" class="btn btn-primary btn-block btn-large">Start Stream</button>
+            </form>
+            <form action="{{url_for('stopstream')}}" method="POST">
+            <button type="submit">Stop Stream</button>
+            </form>
+    </div>
+        
+    <var id = "stream">
+        <img src="{{url_for('esp_feed')}}">
+    </var>
+  
+    
+    
+</section>
+    
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    <footer id="team"  >
+        <div class="row">
+            <div class="col">
+                <img src="../static/images/logo.png" class="logo">
+                <h3>Remote Surgical Arm<div class="underline"> <span></span> </div></h3>
+            </div>
+            <div class="col">
+                <h3>Team <div class="underline"> <span> </span></div></h3>
+                <p>Roshdi Farag</p>
+                <p>Kareem Glela</p>
+                <p>Loay El-Helw</p>
+                <p>Tarek Younis</p>
+                <p>Khaled Rizk</p>
+                <p>Abdalla  Tawfea</p>
+                <p>Alaa Ahmed</p>
+                <p>Nada Ahmed</p>
+                <p>Nourhan adawia</p>
+                <p>Maha Mansour</p>
+            </div>
+            <div class="col">
+                <h3>SuperVision <div class="underline"> <span></span> </div></h3>
+                <p>DR/Mohamed moawad</p>
+                <p>ENG/Mamdouh Rashed</p>
+                <p>ENG/Doaa Ahmed</p>
+            </div>
+            
+
+        </div>
+        <hr>
+    
+        <div class="row">
+            <div class="col">
+                <img src="../static/images/mansuni.png" class="logo1">
+                <h3>Mansoura University<div class="underline"> <span></span> </div></h3>
+            </div>
+            <div class="col">
+                <img src="../static/images/faceng.png" class="logo2">
+                <h3>Faculty Of Engineering<div class="underline"> <span></span> </div></h3>
+            </div>
+            <div class="col">
+                <img src="../static/images/bme.png" class="logo3">
+                <h3>BME Programe<div class="underline"> <span></span> </div></h3>
+            </div>
+        </div>
+         
+        
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
